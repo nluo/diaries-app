@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "outDir": "../js",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "rootDir": "./"
+  },
+  "compileOnSave": true,
+  "filesGlob": [
+    "./**/*.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
