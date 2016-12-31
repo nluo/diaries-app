@@ -5,8 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "npm test",
-    "start": "node server",
-    "compile": "./node_modules/typescript/bin/tsc --sourcemap -p server/ts/"
+    "start": "npm run build && npm run compile && node server/js",
+    "compile": "rm -rf server/js && ./node_modules/typescript/bin/tsc --sourcemap -p server/ts/",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,12 @@
     "@types/react": "^0.14.52",
     "@types/react-dom": "^0.14.19",
     "@types/react-router": "^2.0.41",
+    "@types/redux": "^3.6.0",
     "express": "^4.14.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
+    "redux": "^3.6.0",
     "typescript": "^2.1.4",
     "webpack": "^1.13.3"
   },
