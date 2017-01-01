@@ -73,7 +73,7 @@
 	var redux_1 = __webpack_require__(4);
 	var reducers_1 = __webpack_require__(26);
 	console.log('user reducer is ', reducers_1.userReducer);
-	var store = redux_1.createStore(reducers_1.userReducer);
+	var store = redux_1.createStore(reducers_1.userReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = store;
 
