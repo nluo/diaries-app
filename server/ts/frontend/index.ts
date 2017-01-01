@@ -14,7 +14,7 @@ const app = express()
  * this express router getting involved
  */
 
-app.use(express.static(path.join(__dirname, '../../public'), {
+app.use(express.static(path.join(__dirname, '../../../public'), {
   dotfiles: 'ignore',
   index: false
 }));
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '../../public'), {
 
 app.get('*', function(req, res, next) {
   console.log('Request: [GET]', req.originalUrl)
-  res.sendFile(path.resolve(__dirname, '../../index.html'));
+  res.sendFile(path.resolve(__dirname, '../../../index.html'));
 });
 
 
@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
  * Start Server
  */
 
-const port = 8000;
+const port = 3333;
 app.listen(port);
 
 console.log('Serving: localhost:' + port);

@@ -11,7 +11,7 @@ export class FriendListContainer extends React.Component<any, any> {
     }
 
     public async componentDidMount() {
-        let friends = await getFriends()
+        let friends = (await getFriends()).data
         store.dispatch(getFriendsSuccess(friends))
     }
 
@@ -22,7 +22,7 @@ export class FriendListContainer extends React.Component<any, any> {
     }
 }
 
-const mapStateToProps = function (store) {
+const mapStateToProps = function (store: any) {
     return {
         friends: store.friendState.friends
     }

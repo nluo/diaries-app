@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
-import { userReducer } from './reducers'
+import reducers from './reducers'
 
-const store = createStore(userReducer, (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(reducers, (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__())
 
 export default store

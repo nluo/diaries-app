@@ -5,14 +5,15 @@ interface FriendsActionTypes {
     payload: any
 }
 
-export function getFriendsSuccess (friends): FriendsActionTypes {
+
+export function getFriendsSuccess (friends: any): FriendsActionTypes {
     return {
         type: types.GET_FRIENDS_SUCCESS,
         payload: friends
     }
 }
 
-export function addFriendSuccess (friendEmail): FriendsActionTypes {
+export function addFriendSuccess (friendEmail: string): FriendsActionTypes {
     return {
         type: types.ADD_FRIEND_SUCCESS,
         payload: friendEmail

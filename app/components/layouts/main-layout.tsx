@@ -8,16 +8,8 @@ export function MainLayout (props: any) {
           <div className="col-md-12">
               <Navigation />
           </div>
-          <div className="col-md-3">
-              <aside className="primary-aside">
-                <ul>
-                  <li><Link to="/" activeClassName="active">Home</Link></li>
-                  <li><Link to="/friends" activeClassName="active">My Friends</Link></li>
-                  <li><Link to="/diaries" activeClassName="active">My Diaries</Link></li>
-                </ul>
-              </aside>
-          </div>
-          <main className="col-md-9">
+
+          <main className="col-md-12">
             { props.children }
           </main>
          </div>
