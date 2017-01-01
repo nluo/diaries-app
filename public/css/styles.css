@@ -5,3 +5,27 @@
   height: 100%;
   width: auto;
 }
+
+.navbar {
+    flex: 1 100%;
+}
+
+
+/**
+ * Main Layout
+ */
+
+.primary-aside ul {
+  list-style: none;
+  margin: 0;
+}
+
+.primary-aside a {
+  display: block;
+  padding: 0.6em;
+}
+
+.primary-aside a.active {
+  color: #fff;
+  background-color: #2297D1;
+}

@@ -1954,8 +1954,9 @@
 	var home_1 = __webpack_require__(93);
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = (React.createElement(react_router_1.Router, { history: react_router_1.browserHistory },
-	    React.createElement(react_router_1.Route, { component: main_layout_1.MainLayout },
-	        React.createElement(react_router_1.Route, { path: "/", component: home_1.default }))));
+	    React.createElement(react_router_1.Route, { path: "/", component: main_layout_1.MainLayout },
+	        React.createElement(react_router_1.IndexRoute, { component: home_1.default }),
+	        React.createElement(react_router_1.Route, { path: "/users" }))));
 
 
 /***/ },
@@ -6847,16 +6848,19 @@
 	var react_router_1 = __webpack_require__(37);
 	var navigation_1 = __webpack_require__(92);
 	function MainLayout(props) {
-	    return (React.createElement("div", { className: "app" },
-	        React.createElement(navigation_1.Navigation, null),
-	        React.createElement("aside", { className: "primary-aside" },
-	            React.createElement("ul", null,
-	                React.createElement("li", null,
-	                    React.createElement(react_router_1.Link, { to: "/", activeClassName: "active" }, "Home")),
-	                React.createElement("li", null,
-	                    React.createElement(react_router_1.Link, { to: "/users", activeClassName: "active" }, "Users")),
-	                React.createElement("li", null,
-	                    React.createElement(react_router_1.Link, { to: "/widgets", activeClassName: "active" }, "Widgets"))))));
+	    return (React.createElement("div", { className: "row" },
+	        React.createElement("div", { className: "col-md-12" },
+	            React.createElement(navigation_1.Navigation, null)),
+	        React.createElement("div", { className: "col-md-3" },
+	            React.createElement("aside", { className: "primary-aside" },
+	                React.createElement("ul", null,
+	                    React.createElement("li", null,
+	                        React.createElement(react_router_1.Link, { to: "/", activeClassName: "active" }, "Home")),
+	                    React.createElement("li", null,
+	                        React.createElement(react_router_1.Link, { to: "/users", activeClassName: "active" }, "Users")),
+	                    React.createElement("li", null,
+	                        React.createElement(react_router_1.Link, { to: "/widgets", activeClassName: "active" }, "Widgets"))))),
+	        React.createElement("main", { className: "col-md-9" }, props.children)));
 	}
 	exports.MainLayout = MainLayout;
 

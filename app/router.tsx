@@ -9,8 +9,9 @@ import Home from './components/home'
 
 export default (
   <Router history={browserHistory}>
-    <Route component={MainLayout}>
-      <Route path="/" component={Home} />
+    <Route path="/" component={MainLayout}>
+      <IndexRoute component={Home} />
+      <Route path="/users"/>
     </Route>
   </Router>
 )
