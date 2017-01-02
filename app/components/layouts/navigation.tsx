@@ -5,7 +5,7 @@ export function Navigation () {
     return (
         <nav>
           <AppBar
-            title="My Diaries List"
+            title="My Diaries"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
           />
         </nav>

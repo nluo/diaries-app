@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router'
 import { Navigation } from './navigation'
+import { SideMenu } from './side-menu'
 
 export function MainLayout (props: any) {
     return (
@@ -9,7 +10,11 @@ export function MainLayout (props: any) {
               <Navigation />
           </div>
 
-          <main className="col-md-6">
+          <div className="col-md-3">
+            <SideMenu />
+          </div>
+
+          <main className="col-md-9">
             { props.children }
           </main>
          </div>
