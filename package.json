@@ -7,7 +7,8 @@
     "test": "npm test",
     "start": "npm run build && npm run compile && node server/js",
     "compile": "rm -rf server/js && ./node_modules/typescript/bin/tsc --sourcemap -p server/ts/",
-    "build": "webpack"
+    "build": "webpack",
+    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "repository": {
     "type": "git",

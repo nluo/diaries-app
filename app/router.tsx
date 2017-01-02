@@ -14,6 +14,7 @@ export default (
       <IndexRoute component={ Home } />
       <Route path="/friends" component = { FriendListContainer } />
       <Route path="/diaries" component = { DiaryListContainer } />
+      <Route path="/diaries/:diaryId" component = { DiaryListContainer } />
     </Route>
   </Router>
 )

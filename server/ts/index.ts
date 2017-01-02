@@ -6,10 +6,10 @@
 
 import * as express from 'express'
 const app = express()
-const data = require('../../data/db.json')
+const data = require('../data/db.json')
 
 app.use(function(req, res, next) {
-  var allowedOrigins = ['http://127.0.0.1:3333', 'http://localhost:3333'];
+  var allowedOrigins = ['http://127.0.0.1:3333', 'http://localhost:3333', 'http://127.0.0.1:8080', 'http://localhost:8080'];
   var origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
        res.setHeader('Access-Control-Allow-Origin', origin);
