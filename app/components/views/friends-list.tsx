@@ -23,12 +23,13 @@ export function FriendsList(props: FriendsProps) {
             <List>
                 <Subheader>Friends List</Subheader>
                 {props.friends.map((user) => {
+                    let userAvatar = `https://api.adorable.io/avatars/285/${user.email}.png`
                     return (
                         <ListItem
                             key = {user.id}
                             primaryText={user.name}
                             secondaryText= {user.email}
-                            leftAvatar = {<Avatar src="https://api.adorable.io/avatars/285/abott@adorable.png"/>}
+                            leftAvatar = {<Avatar src={userAvatar} />}
                             rightIcon={<CommunicationChatBubble />}
                         />
                     )
