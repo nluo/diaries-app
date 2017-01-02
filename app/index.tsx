@@ -4,9 +4,19 @@ import store from './store'
 import { Provider } from 'react-redux'
 import router from './router'
 
-ReactDom.render(
-    <Provider store={store}>
+
+import { MuiThemeProvider } from 'material-ui/styles'
+ 
+const App = () => (
+  <MuiThemeProvider>
+     <Provider store={store}>
         {router}
-    </Provider>,
+    </Provider>
+  </MuiThemeProvider>
+);
+
+
+ReactDom.render(
+    <App />,
     document.getElementById('root')
 )

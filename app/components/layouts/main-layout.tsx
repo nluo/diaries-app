@@ -9,7 +9,7 @@ export function MainLayout (props: any) {
               <Navigation />
           </div>
 
-          <main className="col-md-12">
+          <main className="col-md-6">
             { props.children }
           </main>
          </div>

@@ -1,6 +1,11 @@
 import { Link } from 'react-router'
 import * as React from 'react'
 
+import { List, ListItem } from 'material-ui/List'
+import Avatar from 'material-ui/Avatar'
+import Subheader from 'material-ui/Subheader'
+import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble'
+
 interface User {
     id: number,
     email: string
@@ -15,18 +20,20 @@ interface FriendsProps {
 export function FriendsList(props: FriendsProps) {
     return (
         <div className="data-list">
-            {props.friends.map((user, key) => {
-                return (
-                    <div key={user.id} className="data-list-item">
-                        <div className="details">
-                            {user.email}
-                        </div>
-                        <div className="controls">
-                            <button onClick={props.deleteFriend.bind(null, user.id)} className="delete">Delete</button>
-                        </div>
-                    </div>
-                )
-            })}
+            <List>
+                <Subheader>Friends List</Subheader>
+                {props.friends.map((user) => {
+                    return (
+                        <ListItem
+                            key = {user.id}
+                            primaryText={user.name}
+                            secondaryText= {user.email}
+                            leftAvatar = {<Avatar src="https://api.adorable.io/avatars/285/abott@adorable.png"/>}
+                            rightIcon={<CommunicationChatBubble />}
+                        />
+                    )
+                })}
+            </List>
         </div>
     )
 }
