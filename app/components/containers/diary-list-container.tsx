@@ -15,14 +15,15 @@ export class DiaryListContainer extends React.Component<any, any> {
 
     render() {
         return (
-            <DiaryList diaries={ this.props.diaries } />
+            <DiaryList { ... this.props } />
         )
     }
 }
 
 const mapStateToProps = function (store: any) {
     return {
-        diaries: store.diaryState.diaries
+        diaries: store.diaryState.diaries,
+        diaryForm: store.diaryState.diaryForm
     }
 }
 

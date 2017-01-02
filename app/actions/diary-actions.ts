@@ -22,3 +22,14 @@ export function createDiarySuccess (diary: any) {
     }
 }
 
+export function openDiaryForm () {
+    return {
+        type: types.OPEN_DIARY_FORM
+    }
+}
+
+export function closeDiaryForm () {
+    return {
+        type: types.CLOSE_DIARY_FORM
+    }
+}
