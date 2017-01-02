@@ -13,10 +13,11 @@ export function MainLayout (props: any) {
           <div className="col-md-3">
             <SideMenu />
           </div>
-
-          <main className="col-md-9">
-            { props.children }
-          </main>
+          <div className="col-md-9">
+            <main>
+              { props.children }
+            </main>
+          </div>
          </div>
     )
 }

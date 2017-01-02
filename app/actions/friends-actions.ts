@@ -19,3 +19,11 @@ export function addFriendSuccess (friendEmail: string): FriendsActionTypes {
         payload: friendEmail
     }
 }
+
+export function getFriendsError (error: Error): FriendsActionTypes {
+    return {
+        type: types.GET_FRIENDS_SUCCESS,
+        payload: error
+    }
+}
+

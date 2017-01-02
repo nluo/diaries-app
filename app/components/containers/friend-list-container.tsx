@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import  { getFriends } from '../../api/friends'
 import store from '../../store'
-import { getFriendsSuccess } from '../../actions/friends-actions'
+import { getFriendsSuccess, getFriendsError } from '../../actions/friends-actions'
 import { FriendsList } from '../views/friends-list'
 
 export class FriendListContainer extends React.Component<any, any> {
@@ -11,8 +11,12 @@ export class FriendListContainer extends React.Component<any, any> {
     }
 
     public async componentDidMount() {
-        let friends = (await getFriends()).data
-        store.dispatch(getFriendsSuccess(friends))
+        try {
+            let friends = (await getFriends()).data
+            store.dispatch(getFriendsSuccess(friends))
+        } catch (error) {
+            store.dispatch(getFriendsError(error))
+        }
     }
 
     render() {

@@ -6,7 +6,7 @@
 
 import * as express from 'express'
 const app = express()
-const data = require('../../data/users.json')
+const data = require('../../data/db.json')
 
 app.use(function(req, res, next) {
   var allowedOrigins = ['http://127.0.0.1:3333', 'http://localhost:3333'];
@@ -25,6 +25,11 @@ app.get('/friends', function (request, response) {
     let friends = data.users
     console.log('friends is ', friends)
     response.json(friends)
+})
+
+app.get('/diaryentries/', function (request, response) {
+    let diaryEntries = data.diaries
+    response.json(diaryEntries)
 })
 
 /**
