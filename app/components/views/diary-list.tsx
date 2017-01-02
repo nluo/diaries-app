@@ -28,32 +28,41 @@ interface DiaryProps {
     diaries: DiaryItem[]
 }
 
+const buttonStyle = {
+    position: 'absolute',
+    right: '8%',
+    top: '1%'
+}
+
 const ActionButton = (
-    <FloatingActionButton secondary={true} >
+    <FloatingActionButton secondary={true} style={ buttonStyle }>
         <ContentAdd />
     </FloatingActionButton>
 )
 
 const cardStyle = {
-    marginBottom: '30px'
+    marginTop: '30px'
 }
 
-export function DiaryList (props: DiaryProps) {
+export function DiaryList(props: DiaryProps) {
     return (
         <div className="diaryList">
-            {props.diaries.map((diary) => {
-                return (
-                    <Card key={ diary.id } style={ cardStyle } >
-                        <CardHeader
-                            title={ diary.title }
-                            subtitle={ diary.date }
-                            />
-                        <CardText>
-                            { diary.body }
-                        </CardText>
-                    </Card>
-                )
-            })}
+            { ActionButton }
+            {
+                props.diaries.map((diary) => {
+                    return (
+                        <Card key={diary.id} style={cardStyle} >
+                            <CardHeader
+                                title={diary.title}
+                                subtitle={diary.date}
+                                />
+                            <CardText>
+                                {diary.body}
+                            </CardText>
+                        </Card>
+                    )
+                })
+            }
         </div>
     )
 }
