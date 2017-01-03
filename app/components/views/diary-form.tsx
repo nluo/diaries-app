@@ -5,6 +5,9 @@ import FlatButton from 'material-ui/FlatButton'
 import store from '../../store'
 import { closeDiaryForm } from '../../actions/diary-actions'
 
+import TextField from 'material-ui/TextField'
+import DatePicker from 'material-ui/DatePicker'
+
 function handleClose () {
     store.dispatch(closeDiaryForm())
 }
@@ -34,7 +37,17 @@ export function DiaryForm (props: any) {
           onRequestClose={handleClose}
         >
           <form onSubmit={props.search} className="search">
+            <TextField
+              hintText="Diary Title"
+            />
+            <br /><br />
+            <TextField
+              floatingLabelText="Diary content..."
+              multiLine = { true }
+              rows= { 5 }
+            /><br />
 
+            <DatePicker hintText="Landscape Dialog" mode="landscape" />
           </form>
         </Dialog>
       </div>
