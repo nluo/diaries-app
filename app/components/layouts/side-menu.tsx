@@ -6,12 +6,13 @@ import { List, ListItem } from 'material-ui/List'
 import Face from 'material-ui/svg-icons/action/face'
 import Home from 'material-ui/svg-icons/action/home'
 import Book from 'material-ui/svg-icons/action/book'
+
 export function SideMenu () {
     return (
         <List>
-            <ListItem primaryText="Home" leftIcon={<Home />}  containerElement={<Link to="/"/>}/>
-            <ListItem primaryText="Diaries" leftIcon={<Book />}  containerElement={<Link to="/diaries"/>}/>
-            <ListItem primaryText="Friends"  leftIcon={<Face />} containerElement={<Link to="/friends"/>}/>
+            <ListItem primaryText="Home" leftIcon={<Home />}  containerElement={<Link activeClassName="active" to="/"/>}/>
+            <ListItem primaryText="Diaries" leftIcon={<Book />}  containerElement={<Link activeClassName="active" to="/diaries"/>}/>
+            <ListItem primaryText="Friends"  leftIcon={<Face />} containerElement={<Link activeClassName="active" to="/friends"/>}/>
         </List>
     )
 }
