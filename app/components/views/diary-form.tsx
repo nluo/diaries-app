@@ -7,50 +7,57 @@ import { closeDiaryForm } from '../../actions/diary-actions'
 
 import TextField from 'material-ui/TextField'
 import DatePicker from 'material-ui/DatePicker'
+import { CardText, Card } from 'material-ui/Card'
 
-function handleClose () {
+function handleClose() {
     store.dispatch(closeDiaryForm())
 }
 
-export function DiaryForm (props: any) {
+export function DiaryForm(props: DiaryFormProps) {
+
+    const { open, onSubmit, onChange, errors, diary } = props
+
     const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={handleClose}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={handleClose}
-      />,
+        <FlatButton
+            label="Cancel"
+            primary={true}
+            onTouchTap={handleClose}
+            />,
+        <FlatButton
+            label="Submit"
+            primary={true}
+            keyboardFocused={true}
+            onTouchTap={handleClose}
+            />,
     ];
 
     return (
-      <div>
         <Dialog
-          title="New Diary"
-          actions={actions}
-          modal={false}
-          open={props.open}
-          onRequestClose={handleClose}
-        >
-          <form onSubmit={props.search} className="search">
-            <TextField
-              hintText="Diary Title"
-              errorText={props.errors ? props.errors.title: null}
-            />
-            <br /><br />
-            <TextField
-              floatingLabelText="Diary content..."
-              multiLine = { true }
-              rows= { 5 }
-            /><br />
-
-            <DatePicker hintText="Pick a date" mode="landscape" />
-          </form>
+            actions={actions}
+            modal={false}
+            open={open}
+            onRequestClose={handleClose}
+            autoScrollBodyContent={true}
+            >
+            <div className="diary-form">
+                <h2> New Diary </h2>
+                <form onSubmit={props.onSubmit} className="search">
+                    <TextField
+                        hintText="Diary Title"
+                        errorText={props.errors ? props.errors.title : null}
+                        fullWidth = {true}
+                        />
+                    <br />
+                    <DatePicker hintText="Pick a date" mode="landscape" fullWidth = {true} />
+                    <br />
+                    <TextField
+                        floatingLabelText="Diary content..."
+                        multiLine={true}
+                        rows={5}
+                        fullWidth = {true}
+                        /><br />
+                </form>
+            </div>
         </Dialog>
-      </div>
     );
 }

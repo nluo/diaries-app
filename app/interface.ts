@@ -23,3 +23,11 @@ interface FriendsProps {
     friends: User[],
     deleteFriend: Function
 }
+
+interface DiaryFormProps {
+    open: boolean,
+    onSubmit?: any,
+    onChange?: Function,
+    errors?: any,
+    diary?: DiaryItem
+}
