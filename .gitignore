@@ -40,3 +40,6 @@ server/js
 
 # Generated javascript files
 public/js
+
+# Editors
+.vscode
