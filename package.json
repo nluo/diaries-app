@@ -5,10 +5,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "npm test",
-    "start": "npm run build && npm run compile && node server/js",
+    "start": "npm run devServer",
+    "backend": "npm run compile && node server/js",
     "compile": "rm -rf server/js && ./node_modules/typescript/bin/tsc --sourcemap -p server/ts/",
     "build": "webpack",
-    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
     "@types/react-tap-event-plugin": "0.0.30",
     "@types/redux": "^3.6.0",
     "axios": "^0.15.3",
-    "core-js": "^2.4.1",
     "express": "^4.14.0",
     "material-ui": "^0.16.6",
     "react": "^15.4.1",

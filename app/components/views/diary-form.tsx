@@ -27,7 +27,7 @@ export function DiaryForm (props: any) {
     return (
       <div>
         <Dialog
-          title="Create Diary"
+          title="New Diary"
           actions={actions}
           modal={false}
           open={props.open}

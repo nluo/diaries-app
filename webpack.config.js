@@ -1,5 +1,5 @@
 module.exports = {
-    entry: ["core-js/fn/object/assign", "./app/index.tsx"],
+    entry: ["./app/index.tsx"],
     output: {
         filename: "bundle.js",
         path: __dirname + "/public/js",
