@@ -10,6 +10,7 @@
     },
     "compileOnSave": true,
     "files": [
-        "./app/index.tsx"
+        "./app/index.tsx",
+        "./app/interface.ts"
     ]
 }

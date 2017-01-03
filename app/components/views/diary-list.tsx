@@ -20,21 +20,6 @@ import { openDiaryForm } from '../../actions/diary-actions'
 import { DiaryForm } from './diary-form'
 import store from '../../store'
 
-interface DiaryItem {
-    id: number,
-    title: string,
-    body: string,
-    date: string,
-    author?: string
-}
-
-interface DiaryProps {
-    diaries: DiaryItem[],
-    diaryForm: {
-        open: boolean
-    }
-}
-
 const buttonStyle = {
     position: 'absolute',
     right: '8%',

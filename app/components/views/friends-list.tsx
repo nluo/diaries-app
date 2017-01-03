@@ -8,17 +8,6 @@ import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bu
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 
-interface User {
-    id: number,
-    email: string
-    name: string
-}
-
-interface FriendsProps {
-    friends: User[],
-    deleteFriend: Function
-}
-
 const ActionButton = (
     <FloatingActionButton secondary={true} >
         <ContentAdd />

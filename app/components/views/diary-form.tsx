@@ -39,6 +39,7 @@ export function DiaryForm (props: any) {
           <form onSubmit={props.search} className="search">
             <TextField
               hintText="Diary Title"
+              errorText={props.errors ? props.errors.title: null}
             />
             <br /><br />
             <TextField
@@ -47,7 +48,7 @@ export function DiaryForm (props: any) {
               rows= { 5 }
             /><br />
 
-            <DatePicker hintText="Landscape Dialog" mode="landscape" />
+            <DatePicker hintText="Pick a date" mode="landscape" />
           </form>
         </Dialog>
       </div>
