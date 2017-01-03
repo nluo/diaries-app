@@ -11,7 +11,7 @@ interface DiaryEntry {
 
 export function getAll() {
     return axios.get('http://localhost:8000/diaryentries/').then((response: any) => {
-        store.dispatch(getDiariesSuccess(response.diaries))
+        store.dispatch(getDiariesSuccess(response.data))
     }).catch((error) => {
         console.log('get all diaryies error is ', error)
     })
