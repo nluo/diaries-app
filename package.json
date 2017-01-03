@@ -9,7 +9,7 @@
     "backend": "npm run compile && node server/js",
     "compile": "rm -rf server/js && ./node_modules/typescript/bin/tsc --sourcemap -p server/ts/",
     "build": "webpack",
-    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --history-api-fallback"
+    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --history-api-fallback --content-base public"
   },
   "repository": {
     "type": "git",
