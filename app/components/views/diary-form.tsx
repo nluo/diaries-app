@@ -9,9 +9,25 @@ import TextField from 'material-ui/TextField'
 import DatePicker from 'material-ui/DatePicker'
 import { CardText, Card } from 'material-ui/Card'
 
+import { fillUpDiaryForm } from '../../actions/diary-actions'
+
 function handleClose() {
     store.dispatch(closeDiaryForm())
 }
+
+function handleChange(e: any) {
+    e.preventDefault()
+    //dispatch to update state
+    store.dispatch(fillUpDiaryForm({
+        name: e.target.name,
+        value: e.target.value
+    }))
+}
+
+function handleSubmit (diaryItem: DiaryItem) {
+    console.log('on submit, diary item is ', diaryItem)
+}
+
 
 export function DiaryForm(props: DiaryFormProps) {
 
@@ -27,7 +43,7 @@ export function DiaryForm(props: DiaryFormProps) {
             label="Submit"
             primary={true}
             keyboardFocused={true}
-            onTouchTap={handleClose}
+            onTouchTap={handleSubmit.bind(this, props.diary)}
             />,
     ];
 
@@ -45,16 +61,28 @@ export function DiaryForm(props: DiaryFormProps) {
                     <TextField
                         hintText="Diary Title"
                         errorText={props.errors ? props.errors.title : null}
-                        fullWidth = {true}
+                        fullWidth={true}
+                        name="title"
+                        value={diary.title}
+                        onChange={handleChange}
                         />
                     <br />
-                    <DatePicker hintText="Pick a date" mode="landscape" fullWidth = {true} />
+                    <DatePicker
+                        hintText="Pick a date"
+                        mode="landscape"
+                        fullWidth={true}
+                        name="diate"
+                        value={diary.date}
+                        onChange={handleChange } />
                     <br />
                     <TextField
                         floatingLabelText="Diary content..."
                         multiLine={true}
                         rows={5}
-                        fullWidth = {true}
+                        fullWidth={true}
+                        name="body"
+                        value={diary.body}
+                        onChange={handleChange}
                         /><br />
                 </form>
             </div>

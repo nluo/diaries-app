@@ -60,7 +60,10 @@ export function DiaryList(props: DiaryProps) {
                     )
                 })
             }
-            <DiaryForm open={ props.diaryForm.open } />
+            <DiaryForm 
+                open={ props.diaryFormOpen }
+                diary = { props.diaryForm }
+                />
         </div>
     )
 }

@@ -1,16 +1,19 @@
 interface DiaryItem {
-    id: number,
+    id?: number,
     title: string,
     body: string,
-    date: string,
+    date: Date,
     author?: string
+}
+
+interface DiaryForm extends DiaryItem {
+    errors: Object
 }
 
 interface DiaryProps {
     diaries: DiaryItem[],
-    diaryForm: {
-        open: boolean
-    }
+    diaryForm: DiaryForm,
+    diaryFormOpen: boolean
 }
 
 interface User {
@@ -30,4 +33,9 @@ interface DiaryFormProps {
     onChange?: Function,
     errors?: any,
     diary?: DiaryItem
+}
+
+interface DiaryFormItem {
+    name: string,
+    value: string
 }

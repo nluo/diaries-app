@@ -23,6 +23,7 @@ export class DiaryListContainer extends React.Component<any, any> {
 const mapStateToProps = function (store: any) {
     return {
         diaries: store.diaryState.diaries,
+        diaryFormOpen: store.diaryState.diaryFormOpen,
         diaryForm: store.diaryState.diaryForm
     }
 }
