@@ -10,8 +10,17 @@ body {
   width: auto;
 }
 
+.diaries-app {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .navbar {
     flex: 1 100%;
+}
+
+aside {
+  flex: 1 20%;
 }
 
 
@@ -36,6 +45,7 @@ body {
 
 
 main {
+  flex: 1 80%;
   padding-top: 1%;
   padding-right: 5%;
 }
