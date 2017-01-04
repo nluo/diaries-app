@@ -10,10 +10,9 @@ interface DiaryForm extends DiaryItem {
     errors: Object
 }
 
-interface DiaryProps {
+interface DiaryListProps {
     diaries: DiaryItem[],
-    diaryForm: DiaryForm,
-    diaryFormOpen: boolean
+    showForm: any
 }
 
 interface User {
@@ -30,9 +29,10 @@ interface FriendsProps {
 interface DiaryFormProps {
     open: boolean,
     onSubmit?: any,
-    onChange?: Function,
+    onChange?: any,
     errors?: any,
-    diary?: DiaryItem
+    diary?: DiaryItem,
+    onClose?: any
 }
 
 interface DiaryFormItem {

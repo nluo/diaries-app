@@ -3,47 +3,26 @@ import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 
 import store from '../../store'
-import { closeDiaryForm } from '../../actions/diary-actions'
 
 import TextField from 'material-ui/TextField'
 import DatePicker from 'material-ui/DatePicker'
 import { CardText, Card } from 'material-ui/Card'
 
-import { fillUpDiaryForm } from '../../actions/diary-actions'
-
-function handleClose() {
-    store.dispatch(closeDiaryForm())
-}
-
-function handleChange(e: any) {
-    e.preventDefault()
-    //dispatch to update state
-    store.dispatch(fillUpDiaryForm({
-        name: e.target.name,
-        value: e.target.value
-    }))
-}
-
-function handleSubmit (diaryItem: DiaryItem) {
-    console.log('on submit, diary item is ', diaryItem)
-}
-
 
 export function DiaryForm(props: DiaryFormProps) {
-
-    const { open, onSubmit, onChange, errors, diary } = props
+    const { open, onSubmit, onChange, onClose, diary } = props
 
     const actions = [
         <FlatButton
             label="Cancel"
             primary={true}
-            onTouchTap={handleClose}
+            onTouchTap={onClose}
             />,
         <FlatButton
             label="Submit"
             primary={true}
             keyboardFocused={true}
-            onTouchTap={handleSubmit.bind(this, props.diary)}
+            onTouchTap={onSubmit.bind(this, props.diary)}
             />,
     ];
 
@@ -52,7 +31,7 @@ export function DiaryForm(props: DiaryFormProps) {
             actions={actions}
             modal={false}
             open={open}
-            onRequestClose={handleClose}
+            onRequestClose={onClose}
             autoScrollBodyContent={true}
             >
             <div className="diary-form">
@@ -64,7 +43,7 @@ export function DiaryForm(props: DiaryFormProps) {
                         fullWidth={true}
                         name="title"
                         value={diary.title}
-                        onChange={handleChange}
+                        onChange={onChange}
                         />
                     <br />
                     <DatePicker
@@ -73,7 +52,7 @@ export function DiaryForm(props: DiaryFormProps) {
                         fullWidth={true}
                         name="diate"
                         value={diary.date}
-                        onChange={handleChange } />
+                        onChange={onChange } />
                     <br />
                     <TextField
                         floatingLabelText="Diary content..."
@@ -82,7 +61,7 @@ export function DiaryForm(props: DiaryFormProps) {
                         fullWidth={true}
                         name="body"
                         value={diary.body}
-                        onChange={handleChange}
+                        onChange={onChange}
                         /><br />
                 </form>
             </div>

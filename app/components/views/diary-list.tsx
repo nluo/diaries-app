@@ -16,8 +16,6 @@ import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bu
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 
-import { openDiaryForm } from '../../actions/diary-actions'
-import { DiaryForm } from './diary-form'
 import store from '../../store'
 
 const buttonStyle = {
@@ -26,21 +24,18 @@ const buttonStyle = {
     top: '1%'
 }
 
-function showForm() {
-    store.dispatch(openDiaryForm())
-}
 
-const ActionButton = (
-    <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={showForm}>
-        <ContentAdd />
-    </FloatingActionButton>
-)
 
 const cardStyle = {
     marginTop: '30px'
 }
 
-export function DiaryList(props: DiaryProps) {
+export function DiaryList(props: DiaryListProps) {
+    const ActionButton = (
+    <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={props.showForm}>
+        <ContentAdd />
+    </FloatingActionButton>
+)
 
     return (
         <div className="diaryList">
@@ -60,10 +55,7 @@ export function DiaryList(props: DiaryProps) {
                     )
                 })
             }
-            <DiaryForm 
-                open={ props.diaryFormOpen }
-                diary = { props.diaryForm }
-                />
+
         </div>
     )
 }
