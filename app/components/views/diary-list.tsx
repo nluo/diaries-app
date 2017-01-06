@@ -20,8 +20,8 @@ import store from '../../store'
 
 const buttonStyle = {
     position: 'absolute',
-    right: '8%',
-    top: '1%'
+    left: '95vw',
+    top: '10vw'
 }
 
 
@@ -39,7 +39,7 @@ export function DiaryList(props: DiaryListProps) {
 
     return (
         <div className="diaryList">
-            {ActionButton}
+            { ActionButton }
             {
                 props.diaries.map((diary) => {
                     return (
