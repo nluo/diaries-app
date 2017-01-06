@@ -5,18 +5,18 @@ import { SideMenu } from './side-menu'
 
 export function MainLayout(props: any) {
   return (
-    <div className="diaries-app">
-
+    <div className="flex-grid">
       <nav className="navbar">
         <Navigation />
       </nav>
       <aside className="primary-aside">
         <SideMenu />
       </aside>
-      <main className="main-layout">
-        {props.children}
+      <main >
+        <div className="main-content">
+          {props.children}
+        </div>
       </main>
-
     </div>
   )
 }
