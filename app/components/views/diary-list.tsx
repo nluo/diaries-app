@@ -32,10 +32,10 @@ const cardStyle = {
 
 export function DiaryList(props: DiaryListProps) {
     const ActionButton = (
-    <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={props.showForm}>
-        <ContentAdd />
-    </FloatingActionButton>
-)
+        <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={props.showForm}>
+            <ContentAdd />
+        </FloatingActionButton>
+    )
 
     return (
         <div className="diaryList">

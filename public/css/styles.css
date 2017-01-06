@@ -48,6 +48,7 @@ main {
 main > .main-content {
   padding-top: 1vh;
   padding-right: 5vw;
+  padding-left: 5vw;
 }
 
 /**
