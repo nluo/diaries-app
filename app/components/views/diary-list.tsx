@@ -20,10 +20,9 @@ import store from '../../store'
 
 const buttonStyle = {
     position: 'absolute',
-    left: '95vw',
-    top: '10vw'
+    left: '93vw',
+    top: '10vh'
 }
-
 
 
 const cardStyle = {
