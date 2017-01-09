@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { getAll } from '../../api/diary'
+import { getAll, create as createDiary } from '../../api/diary'
 import store from '../../store'
 import { DiaryList } from '../views/diary-list'
 
@@ -50,6 +50,7 @@ const mapDispatchToProps = function (dispatch: any) {
     return {
         handleSubmit: function (diaryItem: DiaryItem) {
             console.log('on submit, diary item is ', diaryItem)
+            return createDiary(diaryItem)
         },
         handleChange: function (e: any) {
             e.preventDefault()
