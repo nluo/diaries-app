@@ -20,10 +20,9 @@ import store from '../../store'
 
 const buttonStyle = {
     position: 'absolute',
-    right: '8%',
-    top: '1%'
+    left: '93vw',
+    top: '10vh'
 }
-
 
 
 const cardStyle = {
@@ -32,14 +31,14 @@ const cardStyle = {
 
 export function DiaryList(props: DiaryListProps) {
     const ActionButton = (
-    <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={props.showForm}>
-        <ContentAdd />
-    </FloatingActionButton>
-)
+        <FloatingActionButton secondary={true} style={buttonStyle} onTouchTap={props.showForm}>
+            <ContentAdd />
+        </FloatingActionButton>
+    )
 
     return (
         <div className="diaryList">
-            {ActionButton}
+            { ActionButton }
             {
                 props.diaries.map((diary) => {
                     return (
