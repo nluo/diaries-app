@@ -49,8 +49,9 @@ const mapStateToProps = function (store: any) {
 const mapDispatchToProps = function (dispatch: any) {
     return {
         handleSubmit: function (diaryItem: DiaryItem) {
-            console.log('on submit, diary item is ', diaryItem)
-            return createDiary(diaryItem)
+            return createDiary(diaryItem).then((result)=>{
+                console.log('pls clean up the form', result)
+            })
         },
         handleChange: function (e: any) {
             e.preventDefault()
@@ -67,7 +68,6 @@ const mapDispatchToProps = function (dispatch: any) {
             store.dispatch(openDiaryForm())
         }
     }
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DiaryListContainer)

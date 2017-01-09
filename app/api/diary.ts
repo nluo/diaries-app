@@ -18,8 +18,10 @@ export function get(id: number) {
     })
 }
 
-export function create (payload: DiaryItem) {
-    axios.post('http://localhost:8000/diaryentries/').then((diary) => {
+export function create (diary: DiaryItem) {
+    return axios.post('http://localhost:8000/diaryentries/', diary, {
+        headers: {'content-type': 'application/json'}
+    }).then((diary) => {
         return store.dispatch(createDiarySuccess(diary.data))
     }).catch((error) => {
         return store.dispatch({
