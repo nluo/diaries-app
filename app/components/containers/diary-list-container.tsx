@@ -27,6 +27,7 @@ export class DiaryListContainer extends React.Component<any, any> {
                     onChange={this.props.handleChange}
                     onClose={this.props.handleClose}
                     diary={this.props.diaryForm}
+                    handleDateChange = {this.props.handleDateChange}
                     />
             </div>
         )

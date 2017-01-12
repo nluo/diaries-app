@@ -32,7 +32,8 @@ interface DiaryFormProps {
     onChange?: any,
     errors?: any,
     diary?: DiaryItem,
-    onClose?: any
+    onClose?: any,
+    handleDateChange?: any
 }
 
 interface DiaryFormItem {

@@ -1,5 +1,5 @@
 import * as types from './action-types'
-import { create as createDiary } from '../api/diary'
+import { create as createDiary, getAll } from '../api/diary'
 
 export function getDiariesSuccess (diaries: any) {
     return {
@@ -34,6 +34,12 @@ export function closeDiaryForm () {
     }
 }
 
+export function clearDiaryForm () {
+    return {
+        type: types.CLEAR_DIARY_FORM
+    }
+}
+
 export function fillUpDiaryForm (diaryFormItem: DiaryFormItem) {
     return {
         type: types.FILL_DIARY_FORM,
@@ -41,11 +47,17 @@ export function fillUpDiaryForm (diaryFormItem: DiaryFormItem) {
     }
 }
 
-
-export function validDiaryForm (diaryFormItem: DiaryFormItem ) {
+export function validDiaryForm (diaryFormItem: DiaryFormItem) {
 
 }
 
 export function submitForm (diaryFormItem: DiaryItem) {
-    return createDiary(diaryFormItem)
+    return createDiary(diaryFormItem).then((result) => {
+        closeDiaryForm()
+        clearDiaryForm()
+        // reload
+        return getAll()
+    }, (error) => {
+        //show errors
+    })
 }

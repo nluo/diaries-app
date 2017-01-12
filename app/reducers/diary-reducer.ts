@@ -5,7 +5,7 @@ const initialState: any = {
     diaries: [],
     diaryForm: {
         title: '',
-        date: new Date(),
+        date: '',
         body: ''
     },
     diaryFormOpen: false,
@@ -30,6 +30,8 @@ const diaryReducer = function (state = initialState, action: any) {
 
             diaryForm[diaryFormItem.name] = diaryFormItem.value
             return objectAssign({}, state, { diaryForm: diaryForm })
+        case types.CLEAR_DIARY_FORM: 
+            return objectAssign({}, state, { diaryForm: {}})
     }
     return state
 }

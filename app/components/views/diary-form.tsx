@@ -10,7 +10,7 @@ import { CardText, Card } from 'material-ui/Card'
 
 
 export function DiaryForm(props: DiaryFormProps) {
-    const { open, onSubmit, onChange, onClose, diary } = props
+    const { open, onSubmit, onChange, onClose, diary, handleDateChange } = props
 
     const actions = [
         <FlatButton
@@ -50,9 +50,9 @@ export function DiaryForm(props: DiaryFormProps) {
                         hintText="Pick a date"
                         mode="landscape"
                         fullWidth={true}
-                        name="diate"
-                        value={diary.date}
-                        onChange={onChange } />
+                        name="date"
+                        value={ diary.date }
+                        onChange={ handleDateChange } />
                     <br />
                     <TextField
                         floatingLabelText="Diary content..."

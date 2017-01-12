@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { create as createDiary } from '../../api/diary'
-
 import { 
     closeDiaryForm, 
     fillUpDiaryForm, 
-    openDiaryForm 
+    openDiaryForm ,
+    submitForm,
+    clearDiaryForm
 } from '../../actions/diary-actions'
 
 import store from '../../store'
@@ -22,8 +22,10 @@ const mapStateToProps = function (store: any) {
 const mapDispatchToProps = function (dispatch: any) {
     return {
         handleSubmit: function (diaryItem: DiaryItem) {
-            return createDiary(diaryItem).then((result)=>{
-                console.log('pls clean up the form', result)
+            return submitForm(diaryItem).then(()=>{
+                console.log('sucessfully created')
+                dispatch(clearDiaryForm())
+                dispatch(closeDiaryForm())
             })
         },
         handleChange: function (e: any) {
@@ -34,7 +36,14 @@ const mapDispatchToProps = function (dispatch: any) {
                 value: e.target.value
             }))
         },
+        handleDateChange: function (e: any, date: any) {
+            dispatch(fillUpDiaryForm({
+                name: 'date',
+                value: date
+            }))
+        },
         handleClose: function (e: any) {
+            dispatch(clearDiaryForm())
             dispatch(closeDiaryForm())
         },
         showForm: function () {
