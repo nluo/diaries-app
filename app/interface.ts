@@ -30,7 +30,7 @@ interface DiaryFormProps {
     open: boolean,
     onSubmit?: any,
     onChange?: any,
-    errors?: any,
+    error?: DiaryFormError,
     diary?: DiaryItem,
     onClose?: any,
     handleDateChange?: any
@@ -39,4 +39,9 @@ interface DiaryFormProps {
 interface DiaryFormItem {
     name: string,
     value: string
+}
+
+interface DiaryFormError {
+    title?: string,
+    body?: string
 }

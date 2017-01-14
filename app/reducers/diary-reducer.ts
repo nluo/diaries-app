@@ -9,7 +9,7 @@ const initialState: any = {
         body: ''
     },
     diaryFormOpen: false,
-    diaryFormErrors: {}
+    diaryFormError: {}
 }
 
 const diaryReducer = function (state = initialState, action: any) {
@@ -30,8 +30,19 @@ const diaryReducer = function (state = initialState, action: any) {
 
             diaryForm[diaryFormItem.name] = diaryFormItem.value
             return objectAssign({}, state, { diaryForm: diaryForm })
-        case types.CLEAR_DIARY_FORM: 
-            return objectAssign({}, state, { diaryForm: {}})
+        case types.CLEAR_DIARY_FORM:
+            return objectAssign({}, state,
+                {
+                    diaryForm: {},
+                    diaryFormError: {}
+                })
+        case types.PARSE_DIARY_FORM_ERROR:
+            return objectAssign({}, state, { diaryFormError: action.payload })
+        case types.CLEAR_DIARY_FORM_ERROR:
+            return objectAssign({}, state,
+                {
+                    diaryFormError: {}
+                })
     }
     return state
 }

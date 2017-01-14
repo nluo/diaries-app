@@ -10,7 +10,7 @@ import { CardText, Card } from 'material-ui/Card'
 
 
 export function DiaryForm(props: DiaryFormProps) {
-    const { open, onSubmit, onChange, onClose, diary, handleDateChange } = props
+    const { open, onSubmit, onChange, onClose, diary, handleDateChange, error } = props
 
     const actions = [
         <FlatButton
@@ -39,7 +39,7 @@ export function DiaryForm(props: DiaryFormProps) {
                 <form onSubmit={props.onSubmit} className="search">
                     <TextField
                         hintText="Diary Title"
-                        errorText={props.errors ? props.errors.title : null}
+                        errorText={props.error ? props.error.title : null}
                         fullWidth={true}
                         name="title"
                         value={diary.title}
@@ -62,6 +62,7 @@ export function DiaryForm(props: DiaryFormProps) {
                         name="body"
                         value={diary.body}
                         onChange={onChange}
+                         errorText={props.error ? props.error.body : null}
                         /><br />
                 </form>
             </div>

@@ -1,5 +1,6 @@
 import * as types from './action-types'
 import { create as createDiary, getAll } from '../api/diary'
+import * as _ from 'lodash'
 
 export function getDiariesSuccess (diaries: any) {
     return {
@@ -47,8 +48,11 @@ export function fillUpDiaryForm (diaryFormItem: DiaryFormItem) {
     }
 }
 
-export function validDiaryForm (diaryFormItem: DiaryFormItem) {
-
+export function parseDiaryFormError (error: DiaryFormError) {
+    return {
+        type: types.PARSE_DIARY_FORM_ERROR,
+        payload: error
+    }
 }
 
 export function submitForm (diaryFormItem: DiaryItem) {
@@ -58,4 +62,10 @@ export function submitForm (diaryFormItem: DiaryItem) {
     }, (error) => {
         //show errors
     })
+}
+
+export function clearDiaryFormError () {
+    return {
+        type: types.CLEAR_DIARY_FORM_ERROR
+    }
 }
