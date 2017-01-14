@@ -53,8 +53,6 @@ export function validDiaryForm (diaryFormItem: DiaryFormItem) {
 
 export function submitForm (diaryFormItem: DiaryItem) {
     return createDiary(diaryFormItem).then((result) => {
-        closeDiaryForm()
-        clearDiaryForm()
         // reload
         return getAll()
     }, (error) => {
