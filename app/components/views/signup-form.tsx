@@ -12,7 +12,6 @@ export function SignupForm (props: any) {
                     <h2 className="card-heading">Sign Up</h2>
                     {props.errors.summary && <p className="error-message">{props.errors.summary}</p>}
                     
-                    
                     <div className="field-line">
                         <TextField
                             floatingLabelText="Email"
@@ -31,17 +30,6 @@ export function SignupForm (props: any) {
                             onChange={props.onChange}
                             errorText={props.errors.password}
                             value={props.password}
-                            />
-                    </div>
-
-                    <div className="field-line">
-                        <TextField
-                            floatingLabelText="Confirm Password"
-                            type="password"
-                            name="confirmPassword"
-                            onChange={props.onChange}
-                            errorText={props.errors.confirmPassword}
-                            value={props.confirmPassword}
                             />
                     </div>
 

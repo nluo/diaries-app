@@ -52,7 +52,8 @@ export function DiaryForm(props: DiaryFormProps) {
                         fullWidth={true}
                         name="date"
                         value={ diary.date }
-                        onChange={ handleDateChange } />
+                        onChange={ handleDateChange } 
+                        defaultDate = { new Date() } />
                     <br />
                     <TextField
                         floatingLabelText="Diary content..."

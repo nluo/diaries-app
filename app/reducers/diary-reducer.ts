@@ -5,7 +5,7 @@ const initialState: any = {
     diaries: [],
     diaryForm: {
         title: '',
-        date: '',
+        date: null,
         body: ''
     },
     diaryFormOpen: false,

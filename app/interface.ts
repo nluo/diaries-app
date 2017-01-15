@@ -38,7 +38,7 @@ interface DiaryFormProps {
 
 interface DiaryFormItem {
     name: string,
-    value: string
+    value: string | Date
 }
 
 interface DiaryFormError {
