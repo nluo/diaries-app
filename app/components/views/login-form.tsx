@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router'
 import { Card, CardText } from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
-import TextField  from 'material-ui/TextField'
+import TextField from 'material-ui/TextField'
 
 export function LoginForm(props: any) {
     return (
@@ -17,7 +17,7 @@ export function LoginForm(props: any) {
                             name="email"
                             errorText={props.errors.email}
                             onChange={props.onChange}
-                            value={props.identifier}
+                            value={props.email}
                             />
                     </div>
 
@@ -39,7 +39,7 @@ export function LoginForm(props: any) {
                     <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
                 </form>
             </Card>
-            </div>
+        </div>
     )
 
 }

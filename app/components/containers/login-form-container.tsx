@@ -7,7 +7,7 @@ export class LoginFormContainer extends React.Component<any, any> {
     constructor(props: any) {
         super(props)
         this.state = {
-            identifier: '',
+            email: '',
             password: '',
             errors: {
                 email: '',
