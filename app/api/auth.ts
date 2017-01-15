@@ -8,3 +8,10 @@ export function login (requester: any) {
         password: requester.password
     })
 }
+
+export function signup (requester: any) {
+    return axios.post('http://localhost:8000/users/', {
+        email: requester.email,
+        password: requester.password
+    })
+}

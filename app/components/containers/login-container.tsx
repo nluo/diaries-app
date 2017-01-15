@@ -50,7 +50,6 @@ export class LoginFormContainer extends React.Component<any, any> {
             this.props.login(this.state).then(
                 () => this.context.router.push('/'),
                 (err: any) => {
-                    console.log('the error is ', err)
                     this.setState({ errors: err.response.data.errors, isLoading: false })
                 }
             )
@@ -63,7 +62,7 @@ export class LoginFormContainer extends React.Component<any, any> {
 
     render() {
         return (
-            <LoginForm 
+            <LoginForm
                 errors={this.state.errors}
                 onChange = {this.onChange}
                 onSubmit = {this.onSubmit}

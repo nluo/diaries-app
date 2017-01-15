@@ -4,12 +4,12 @@ import { Card, CardText } from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 
-export function LoginForm(props: any) {
+export function SignupForm (props: any) {
     return (
         <div>
             <Card className="container">
                 <form action="/" onSubmit={props.onSubmit}>
-                    <h2 className="card-heading">Login</h2>
+                    <h2 className="card-heading">Sign Up</h2>
                     {props.errors.summary && <p className="error-message">{props.errors.summary}</p>}
                     
                     
@@ -34,11 +34,22 @@ export function LoginForm(props: any) {
                             />
                     </div>
 
-                    <div className="button-line">
-                        <RaisedButton type="submit" label="Log in" primary />
+                    <div className="field-line">
+                        <TextField
+                            floatingLabelText="Confirm Password"
+                            type="password"
+                            name="confirmPassword"
+                            onChange={props.onChange}
+                            errorText={props.errors.confirmPassword}
+                            value={props.confirmPassword}
+                            />
                     </div>
 
-                    <CardText>Don't have an account? <Link to={'/register'}>Create one</Link>.</CardText>
+                    <div className="button-line">
+                        <RaisedButton type="submit" label="Create New Account" primary />
+                    </div>
+
+                    <CardText>Already have an account? <Link to={'/login'}>Login</Link>.</CardText>
                 </form>
             </Card>
         </div>
