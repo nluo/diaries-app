@@ -36,7 +36,7 @@ export class LoginFormContainer extends React.Component<any, any> {
         if (!password || password.trim() === '') {
             errors.password = 'Password cannot be blank'
             isValid = false
-        }
+        }   
         // return isValid
         return { isValid, errors }
     }
@@ -49,7 +49,10 @@ export class LoginFormContainer extends React.Component<any, any> {
             this.setState({ errors: {}, isLoading: true })
             this.props.login(this.state).then(
                 () => this.context.router.push('/'),
-                (err: any) => this.setState({ errors: err.response.data.errors, isLoading: false })
+                (err: any) => {
+                    console.log('the error is ', err)
+                    this.setState({ errors: err.response.data.errors, isLoading: false })
+                }
             )
         }
     }
@@ -64,7 +67,7 @@ export class LoginFormContainer extends React.Component<any, any> {
                 errors={this.state.errors}
                 onChange = {this.onChange}
                 onSubmit = {this.onSubmit}
-                identifier = {this.state.identifier}
+                email = {this.state.email}
                 password = {this.state.password}
             />
         )
